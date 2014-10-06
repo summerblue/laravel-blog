@@ -1,0 +1,1 @@
+/home/vagrant/laravel-blog/app/views/categories/edit.blade.php

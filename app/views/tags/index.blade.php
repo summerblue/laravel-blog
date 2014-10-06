@@ -1,0 +1,1 @@
+/home/vagrant/laravel-blog/app/views/tags/index.blade.php
