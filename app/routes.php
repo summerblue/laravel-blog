@@ -11,19 +11,21 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'PostsController@index');
+Route::get('about', ['as' => 'about', 'uses' => 'PostsController@index']);
 
 // Confide routes
-Route::get('register', 'UsersController@create');
+Route::get('signup', ['as' => 'signup', 'uses' => 'UsersController@create']);
 Route::post('users', 'UsersController@store');
-Route::get('login', 'UsersController@login');
+Route::get('login', ['as' => 'login', 'uses' => 'UsersController@login']);
 Route::post('users/login', 'UsersController@doLogin');
 Route::get('users/confirm/{code}', 'UsersController@confirm');
 Route::get('users/forgot_password', 'UsersController@forgotPassword');
 Route::post('users/forgot_password', 'UsersController@doForgotPassword');
 Route::get('users/reset_password/{token}', 'UsersController@resetPassword');
 Route::post('users/reset_password', 'UsersController@doResetPassword');
-Route::get('users/logout', 'UsersController@logout');
+Route::get('logout', ['as' => 'logout', 'uses' => 'UsersController@logout']);
+
+
+Route::resource('posts', 'PostsController');
+Route::resource('users', 'UsersController');

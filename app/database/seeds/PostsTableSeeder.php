@@ -11,7 +11,7 @@ class PostsTableSeeder extends Seeder
         $users = User::lists('id');
         $categories = Category::lists('id');
 
-		foreach(range(1, 10) as $index)
+		foreach(range(1, 100) as $index)
 		{
 			Post::create([
                 'title'         => $faker->sentence(),
