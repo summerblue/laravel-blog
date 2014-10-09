@@ -10,6 +10,7 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: #DBE4DF;
+  background-image: url(../images/bg.jpg);
   font-family: "lato-regular", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
 }
 
@@ -93,6 +94,8 @@ body {
 .main {
   background: white;
   padding: 15px;
+  box-shadow: 0 .2em 0 0 #ddd,0 0 0 1px #ddd;
+  border-radius: 2px;
 }
 
 .brand {
@@ -109,4 +112,18 @@ body {
   margin-bottom: 0px;
   border:none;
   border-bottom: 1px dashed #ccc;
+}
+
+a.list-group-item:hover, a.list-group-item:focus {
+    text-decoration: none;
+    color: #555;
+    background-color: #F4EEDE;
+}
+
+.content {
+    min-height: 300px;
+}
+.content form {
+    margin-bottom: 30px;
+    margin-top: 30px;
 }

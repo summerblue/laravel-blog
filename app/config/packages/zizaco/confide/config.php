@@ -11,7 +11,7 @@ return array(
     | the 'throttle_time_period', which is in minutes.
     |
     */
-    'throttle_limit' => 9,
+    'throttle_limit' => 5,
     'throttle_time_period' => 2,
 
     /*
@@ -46,10 +46,10 @@ return array(
     |
     |
     */
-    'login_form' =>             'confide::login',
-    'signup_form' =>            'confide::signup',
-    'forgot_password_form' =>   'confide::forgot_password',
-    'reset_password_form' =>    'confide::reset_password',
+    'login_form' =>             'users.login',
+    'signup_form' =>            'users.signup',
+    'forgot_password_form' =>   'users.forgot_password',
+    'reset_password_form' =>    'users.reset_password',
 
     /*
     |--------------------------------------------------------------------------
