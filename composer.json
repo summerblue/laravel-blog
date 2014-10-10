@@ -15,7 +15,9 @@
 		"michelf/php-markdown": "1.4.*",
 		"mews/purifier": "dev-master",
 		"frozennode/administrator": "dev-master",
-		"itsgoingd/clockwork": "1.*"
+		"itsgoingd/clockwork": "1.*",
+        "cviebrock/eloquent-sluggable": "2.*",
+        "cviebrock/eloquent-taggable": "0.*"
 	},
 	"require-dev": {
 		"way/generators": "~2.0",

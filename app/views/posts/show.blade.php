@@ -11,7 +11,14 @@
 <p class="article-meta">
     <i class="fa fa-calendar"></i> {{ $post->created_at }} <span style="padding:0 6px">•</span>
     <i class="fa fa-book"></i> {{ $post->category->name }} <span style="padding:0 6px">•</span>
-    <i class="fa fa-tags"></i> <a href=""><span class="badge badge-info">Bootstrap</span></a> <a href=""><span class="badge badge-info">Web</span></a> <a href=""><span class="badge badge-info">CSS</span></a> <a href=""><span class="badge badge-info">HTML</span></a>
+    <i class="fa fa-tags"></i>
+
+    @forelse ($post->tags as $tag)
+        <span class="badge badge-info">{{ $tag->name }}</span>
+    @empty
+        N/A
+    @endforelse
+
 </p>
 
 <hr>

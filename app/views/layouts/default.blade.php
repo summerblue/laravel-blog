@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="{{ cdn("/assets/styles/bootstrap.css") }}">
     <link rel="stylesheet" href="{{ cdn("/assets/styles/main.css") }}">
 
+    @yield('styles')
+
   </head>
 
   <body>
@@ -43,6 +45,8 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.js"></script>
     <script src="{{ cdn("/assets/scripts/main.js") }}"></script>
+
+    @yield('scripts')
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>

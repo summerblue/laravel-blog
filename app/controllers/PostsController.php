@@ -1,43 +1,33 @@
 <?php
 
-class PostsController extends \BaseController {
-
-	/**
-	 * Display a listing of posts
-	 *
-	 * @return Response
-	 */
+class PostsController extends \BaseController
+{
 	public function index()
 	{
-		$posts = Post::with('user', 'category')->paginate(10);
+		$posts = Post::with('user', 'category')->recent()->paginate(10);
 		return View::make('posts.index', compact('posts'));
 	}
 
-	/**
-	 * Show the form for creating a new post
-	 *
-	 * @return Response
-	 */
 	public function create()
 	{
-		return View::make('posts.create');
+        $category_selects = Category::lists('name', 'id');
+		return View::make('posts.create', compact('category_selects'));
 	}
 
-	/**
-	 * Store a newly created post in storage.
-	 *
-	 * @return Response
-	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Post::$rules);
+		$validator = Validator::make(Input::all(), Post::$rules);
 
 		if ($validator->fails())
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
+        $data = Input::only('title', 'body', 'category_id');
+        $data['user_id'] = Auth::user()->id;
 
-		Post::create($data);
+		$post = Post::create($data);
+
+        $post->tag(Input::get('tags'));
 
 		return Redirect::route('posts.index');
 	}

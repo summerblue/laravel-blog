@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "faae905563078273d893441ba65a1a50",
+    "hash": "8698b6e9808049ad8dba4b86a44b4363",
     "packages": [
         {
             "name": "ckeditor/ckeditor",
@@ -93,6 +93,108 @@
                 "preload"
             ],
             "time": "2014-03-12 00:05:31"
+        },
+        {
+            "name": "cviebrock/eloquent-sluggable",
+            "version": "2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cviebrock/eloquent-sluggable.git",
+                "reference": "c0d80b7e53ec4c57f8b994eac6786ee4e6216330"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cviebrock/eloquent-sluggable/zipball/c0d80b7e53ec4c57f8b994eac6786ee4e6216330",
+                "reference": "c0d80b7e53ec4c57f8b994eac6786ee4e6216330",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "4.*",
+                "illuminate/database": "4.*",
+                "illuminate/support": "4.*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "laravelbook/ardent": "dev-master",
+                "orchestra/testbench": "2.*",
+                "phpunit/phpunit": "4.0.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Cviebrock\\EloquentSluggable": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Colin Viebrock",
+                    "email": "colin@viebrock.ca"
+                }
+            ],
+            "description": "Easy creation of slugs for your Eloquent models in Laravel 4.",
+            "homepage": "https://github.com/cviebrock/eloquent-sluggable",
+            "keywords": [
+                "eloquent",
+                "laravel",
+                "slug"
+            ],
+            "time": "2014-09-24 04:42:44"
+        },
+        {
+            "name": "cviebrock/eloquent-taggable",
+            "version": "0.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cviebrock/eloquent-taggable.git",
+                "reference": "ce85ed6302e8dfe8e5d112bbc0494c5016e55659"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cviebrock/eloquent-taggable/zipball/ce85ed6302e8dfe8e5d112bbc0494c5016e55659",
+                "reference": "ce85ed6302e8dfe8e5d112bbc0494c5016e55659",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "4.*",
+                "illuminate/database": "4.*",
+                "illuminate/support": "4.*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "2.*",
+                "phpunit/phpunit": "4.0.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Cviebrock\\EloquentTaggable": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Colin Viebrock",
+                    "email": "colin@viebrock.ca",
+                    "homepage": "https://github.com/cviebrock"
+                }
+            ],
+            "description": "Easy ability to tag your Eloquent models in Laravel 4.",
+            "homepage": "https://github.com/cviebrock/eloquent-taggable",
+            "keywords": [
+                "Taggable",
+                "eloquent",
+                "laravel",
+                "tag",
+                "tagging"
+            ],
+            "time": "2014-05-16 22:34:56"
         },
         {
             "name": "d11wtq/boris",
@@ -2275,16 +2377,16 @@
     "packages-dev": [
         {
             "name": "codeception/codeception",
-            "version": "2.0.5",
+            "version": "2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/Codeception.git",
-                "reference": "0314ca60e48e1d2ae62139029efd942362f37542"
+                "reference": "b7562022177e32a5a4c5ddc68fe3c3c2566156f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/0314ca60e48e1d2ae62139029efd942362f37542",
-                "reference": "0314ca60e48e1d2ae62139029efd942362f37542",
+                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/b7562022177e32a5a4c5ddc68fe3c3c2566156f5",
+                "reference": "b7562022177e32a5a4c5ddc68fe3c3c2566156f5",
                 "shasum": ""
             },
             "require": {
@@ -2304,6 +2406,7 @@
             },
             "require-dev": {
                 "codeception/specify": "~0.3",
+                "codegyre/robo-ci": "@dev",
                 "facebook/php-sdk": "~3.2",
                 "monolog/monolog": "~1.8",
                 "pda/pheanstalk": "~2.0",
@@ -2321,6 +2424,11 @@
                 "codecept"
             ],
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Codeception": "src"
@@ -2346,7 +2454,7 @@
                 "functional testing",
                 "unit testing"
             ],
-            "time": "2014-08-21 03:21:23"
+            "time": "2014-10-07 23:19:42"
         },
         {
             "name": "doctrine/instantiator",
@@ -2664,12 +2772,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/padraic/mockery.git",
-                "reference": "627a6c8eaf9772ad25c9bdaecc0187d562bf8213"
+                "reference": "a0a8d0e7d6964fe556f4a30cb758603a99569cb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/padraic/mockery/zipball/627a6c8eaf9772ad25c9bdaecc0187d562bf8213",
-                "reference": "627a6c8eaf9772ad25c9bdaecc0187d562bf8213",
+                "url": "https://api.github.com/repos/padraic/mockery/zipball/a0a8d0e7d6964fe556f4a30cb758603a99569cb2",
+                "reference": "a0a8d0e7d6964fe556f4a30cb758603a99569cb2",
                 "shasum": ""
             },
             "require": {
@@ -2722,7 +2830,7 @@
                 "test double",
                 "testing"
             ],
-            "time": "2014-10-01 10:20:07"
+            "time": "2014-10-07 06:23:47"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -3218,28 +3326,28 @@
         },
         {
             "name": "sebastian/environment",
-            "version": "1.0.1",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "10c7467da0622f7848cc5cadc0828c3359254df4"
+                "reference": "6288ebbf6fa3ed2b2ff2d69c356fbaaf4f0971a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/10c7467da0622f7848cc5cadc0828c3359254df4",
-                "reference": "10c7467da0622f7848cc5cadc0828c3359254df4",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/6288ebbf6fa3ed2b2ff2d69c356fbaaf4f0971a7",
+                "reference": "6288ebbf6fa3ed2b2ff2d69c356fbaaf4f0971a7",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "~4.3"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -3264,7 +3372,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2014-05-04 17:56:05"
+            "time": "2014-10-07 09:23:16"
         },
         {
             "name": "sebastian/exporter",

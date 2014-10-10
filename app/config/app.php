@@ -132,6 +132,8 @@ return array(
         'Thujohn\Rss\RssServiceProvider',
         'Mews\Purifier\PurifierServiceProvider',
         'Frozennode\Administrator\AdministratorServiceProvider',
+        'Cviebrock\EloquentSluggable\SluggableServiceProvider',
+        'Cviebrock\EloquentTaggable\TaggableServiceProvider',
 
 
 	),

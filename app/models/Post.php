@@ -1,15 +1,30 @@
 <?php
 
-class Post extends \Eloquent
-{
-    // manually maintian
-    public $timestamps = false;
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 
-	protected $fillable = [
-        'title', 'slug', 'body',
-        'body_original', 'user_id', 'category_id',
-        'comments_count'
-    ];
+use Cviebrock\EloquentTaggable\Taggable;
+use Cviebrock\EloquentTaggable\TaggableImpl;
+
+
+class Post extends \Eloquent implements SluggableInterface, Taggable
+{
+    use SluggableTrait;
+    use TaggableImpl;
+
+    protected $sluggable = array(
+        'build_from' => 'title',
+        'save_to'    => 'slug',
+    );
+
+    public static $rules = array(
+        'title'       => 'required|min:3',
+        'category_id' => 'required|exists:categories,id',
+        'tags'        => 'required|min:3',
+        'body'        => 'required|min:3'
+    );
+
+    protected $fillable = ['title', 'slug', 'body', 'user_id', 'category_id'];
 
     public function comments()
     {
@@ -24,11 +39,6 @@ class Post extends \Eloquent
     public function category()
     {
         return $this->belongsTo('Category');
-    }
-
-    public function tags()
-    {
-        return $this->belongsToMany('Tag');
     }
 
     public function scopeRecent($query)
