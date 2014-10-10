@@ -17,7 +17,6 @@
         There are nothing here!
     @endforelse
 
-
     </div>
 
     {{ $posts->links(); }}
