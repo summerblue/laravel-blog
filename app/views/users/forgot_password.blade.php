@@ -4,7 +4,7 @@
 
 <div class="col-md-6 col-md-offset-3">
 
-<h2 class="text-muted">Send Reset Email</h2>
+<h3 class="text-muted">Send Reset Email</h3>
 
 <form method="POST" action="{{ URL::to('/users/forgot_password') }}" accept-charset="UTF-8">
     <input type="hidden" name="_token" value="{{{ Session::getToken() }}}">
