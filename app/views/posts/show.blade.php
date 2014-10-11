@@ -7,9 +7,8 @@
 <p class="article-meta">
     <i class="fa fa-user"></i> by <a href="{{ route('users.show', $post->user->id) }}">{{ $post->user->username }}</a>
 
-    <span style="padding:0 6px">•</span>
-
     @if ( $currentUser && ($currentUser->can("manage_contents") || $currentUser->id == $post->user_id) )
+        <span style="padding:0 6px">•</span>
         <i class="fa fa-pencil-square-o"></i> <a href="{{ route('posts.edit', $post->id) }}">edit</a>
         <span style="padding:0 6px">•</span>
         <i class="fa fa-trash"></i> <a href="{{ route('posts.destroy', $post->id) }}" data-method="delete">delete</a>
@@ -25,7 +24,6 @@
     @empty
         N/A
     @endforelse
-
 </p>
 
 <hr>
@@ -35,7 +33,7 @@
 </div>
 
 <h4 style="margin-top:50px; margin-bottom:10px;">
-<hr>
+    <hr>
     Comments ( {{ $comments->getTotal() }} ):
 </h4>
 

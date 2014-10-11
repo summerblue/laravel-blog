@@ -1,27 +1,12 @@
 <?php
 
-/**
- * UsersController Class
- *
- * Implements actions regarding user management
- */
 class UsersController extends BaseController
 {
-    /**
-     * Displays the form for account creation
-     *
-     * @return  Illuminate\Http\Response
-     */
     public function create()
     {
         return View::make(Config::get('confide::signup_form'));
     }
 
-    /**
-     * Stores new account
-     *
-     * @return  Illuminate\Http\Response
-     */
     public function store()
     {
         $repo = App::make('UserRepository');
@@ -52,11 +37,6 @@ class UsersController extends BaseController
         }
     }
 
-    /**
-     * Displays the login form
-     *
-     * @return  Illuminate\Http\Response
-     */
     public function login()
     {
         if (Confide::user()) {
@@ -66,11 +46,6 @@ class UsersController extends BaseController
         }
     }
 
-    /**
-     * Attempt to do login
-     *
-     * @return  Illuminate\Http\Response
-     */
     public function doLogin()
     {
         $repo = App::make('UserRepository');
@@ -93,13 +68,6 @@ class UsersController extends BaseController
         }
     }
 
-    /**
-     * Attempt to confirm account with code
-     *
-     * @param  string $code
-     *
-     * @return  Illuminate\Http\Response
-     */
     public function confirm($code)
     {
         if (Confide::confirm($code)) {
@@ -113,21 +81,11 @@ class UsersController extends BaseController
         }
     }
 
-    /**
-     * Displays the forgot password form
-     *
-     * @return  Illuminate\Http\Response
-     */
     public function forgotPassword()
     {
         return View::make(Config::get('confide::forgot_password_form'));
     }
 
-    /**
-     * Attempt to send change password link to the given email
-     *
-     * @return  Illuminate\Http\Response
-     */
     public function doForgotPassword()
     {
         if (Confide::forgotPassword(Input::get('email'))) {
@@ -142,24 +100,12 @@ class UsersController extends BaseController
         }
     }
 
-    /**
-     * Shows the change password form with the given token
-     *
-     * @param  string $token
-     *
-     * @return  Illuminate\Http\Response
-     */
     public function resetPassword($token)
     {
         return View::make(Config::get('confide::reset_password_form'))
                 ->with('token', $token);
     }
 
-    /**
-     * Attempt change password of the user
-     *
-     * @return  Illuminate\Http\Response
-     */
     public function doResetPassword()
     {
         $repo = App::make('UserRepository');
@@ -182,15 +128,16 @@ class UsersController extends BaseController
         }
     }
 
-    /**
-     * Log the user out of the application.
-     *
-     * @return  Illuminate\Http\Response
-     */
     public function logout()
     {
         Confide::logout();
-
         return Redirect::to('/');
+    }
+
+    public function show($id)
+    {
+        $user = User::findOrFail($id);
+        $posts = $user->posts()->recent()->paginate(10);
+        return View::make('posts.index', compact('user', 'posts'));
     }
 }

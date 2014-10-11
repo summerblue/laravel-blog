@@ -42,14 +42,12 @@
             @yield('content')
         </div>
 
-
-      <div class="footer">
-        <p>
-            <span class="glyphicon glyphicon-heart"></span> from The EST Group
-            <span class="pull-right"><a href="{{ route('about') }}" style="color:#777">about</a></span>
-        </p>
-
-      </div>
+        <div class="footer">
+            <p>
+                <span class="glyphicon glyphicon-heart"></span> from The EST Group
+                <span class="pull-right"><a href="{{ route('about') }}">about</a></span>
+            </p>
+        </div>
 
     </div>
 
