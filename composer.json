@@ -10,7 +10,6 @@
 		"zizaco/entrust": "1.2.*@dev",
 		"zizaco/confide": "~4.0@dev",
 		"thujohn/rss": "dev-master",
-		"michelf/php-markdown": "1.4.*",
 		"mews/purifier": "dev-master",
 		"frozennode/administrator": "dev-master",
 		"itsgoingd/clockwork": "1.*",
