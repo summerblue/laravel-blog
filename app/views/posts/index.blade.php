@@ -2,6 +2,13 @@
 
 @section('content')
 
+    @if (isset($category))
+        <h3 style="margin-left: 10px; line-height: 1.5;"><i class="fa fa-book">
+            </i> Category: <span class="label label-default">{{ $category->name }}</span>
+        </h3>
+
+    @endif
+
     <div class="list-group">
 
     @forelse ($posts as $post)

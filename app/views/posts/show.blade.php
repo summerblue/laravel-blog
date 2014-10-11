@@ -16,7 +16,7 @@
 
 <p class="article-meta">
     <i class="fa fa-calendar"></i> {{ $post->created_at }} <span style="padding:0 6px">•</span>
-    <i class="fa fa-book"></i> {{ $post->category->name }} <span style="padding:0 6px">•</span>
+    <i class="fa fa-book"></i> <a href="{{ route('categories.show', $post->category->slug) }}">{{ $post->category->name }}</a> <span style="padding:0 6px">•</span>
     <i class="fa fa-tags"></i>
 
     @forelse ($post->tags as $tag)
