@@ -28,6 +28,7 @@ class CommentsController extends \BaseController
     public function destroy($id)
     {
         $comment = Comment::findOrFail($id);
+        $this->authorOrAdminPermissioinRequire($comment->user_id);
         Comment::destroy($id);
         Flash::success(lang('Operation succeeded.'));
         return Redirect::route('posts.show', $comment->post_id);

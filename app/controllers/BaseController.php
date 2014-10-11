@@ -17,4 +17,11 @@ class BaseController extends Controller {
         View::share('currentUser', Auth::user());
 	}
 
+    public function authorOrAdminPermissioinRequire($author_id)
+    {
+        if (! Entrust::can('manage_contents') && $author_id != Auth::user()->id)
+        {
+            App::abort(403, 'Unauthorized action.');
+        }
+    }
 }

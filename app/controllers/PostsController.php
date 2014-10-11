@@ -49,6 +49,7 @@ class PostsController extends \BaseController
 	public function edit($id)
 	{
         $post = Post::find($id);
+        $this->authorOrAdminPermissioinRequire($post->user_id);
         $category_selects = Category::lists('name', 'id');
         return View::make('posts.create_edit', compact('category_selects', 'post'));
 	}
@@ -56,6 +57,7 @@ class PostsController extends \BaseController
 	public function update($id)
 	{
 		$post = Post::findOrFail($id);
+        $this->authorOrAdminPermissioinRequire($post->user_id);
 		$validator = Validator::make($data = Input::all(), Post::$rules);
 		if ($validator->fails())
 		{
@@ -73,7 +75,9 @@ class PostsController extends \BaseController
 
 	public function destroy($id)
 	{
-		Post::destroy($id);
+		$post = Post::findOrFail($id);
+        $this->authorOrAdminPermissioinRequire($post->user_id);
+        Post::destroy($id);
         Flash::success(lang('Operation succeeded.'));
 		return Redirect::route('posts.index');
 	}
