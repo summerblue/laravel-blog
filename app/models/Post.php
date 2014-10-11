@@ -28,7 +28,7 @@ class Post extends \Eloquent implements SluggableInterface, Taggable
 
     public function comments()
     {
-        return $this->hasMany('Comment');
+        return $this->hasMany('Comment')->with('user');
     }
 
     public function user()

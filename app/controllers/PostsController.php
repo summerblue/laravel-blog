@@ -40,7 +40,8 @@ class PostsController extends \BaseController
 	public function show($id)
 	{
 		$post = Post::findOrFail($id);
-		return View::make('posts.show', compact('post'));
+        $comments = $post->comments()->paginate(10);
+		return View::make('posts.show', compact('post', 'comments'));
 	}
 
 	public function edit($id)

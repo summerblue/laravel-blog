@@ -20,7 +20,7 @@
         <a href="{{ route('posts.show', $post->id) }}" class="list-group-item">
             <h4 class="list-group-item-heading">{{ $post->title }}</h4>
             <div class="meta">
-                <i class="fa fa-clock-o"></i> <span>{{ $post->created_at }}</span>
+                <i class="fa fa-calendar"></i> <span class="timeago">{{ $post->created_at }}</span>
                 •  <i class="fa fa-user"></i> {{ $post->user->username }}
                 •  <i class="fa fa-book"></i> {{ $post->category->name }}
                 •  <i class="fa fa-tags"></i>

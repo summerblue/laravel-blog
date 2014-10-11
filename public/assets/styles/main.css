@@ -23,8 +23,6 @@ body {
   padding-right: 15px;
 }
 
-
-
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
@@ -96,7 +94,7 @@ body {
 
 .main {
   background: white;
-  padding: 15px;
+  padding: 15px 20px;
   box-shadow: 0 .2em 0 0 #ddd,0 0 0 1px #ddd;
   border-radius: 2px;
 }
@@ -150,4 +148,18 @@ h1 {
     margin-left: 10px;
     line-height: 1.5;
     margin-bottom: 20px;
+}
+
+
+.article-comment {
+    margin: 11px -20px 20px;
+}
+
+.article-comment .list-group-item {
+    position: relative;
+    display: block;
+    padding: 10px 20px;
+}
+.comment-input {
+    /*margin-top: 10px;*/
 }

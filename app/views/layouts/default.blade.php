@@ -8,12 +8,9 @@
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
 
-    <!-- <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.css" /> -->
-
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css">
     <link rel="stylesheet" href="{{ cdn("/assets/styles/bootstrap.css") }}">
     <link rel="stylesheet" href="{{ cdn("/assets/styles/main.css") }}">
-
 
     <script>
         Config = {
@@ -58,6 +55,8 @@
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.js"></script>
+
     <script src="{{ cdn("/assets/scripts/main.js") }}"></script>
 
     @yield('scripts')
