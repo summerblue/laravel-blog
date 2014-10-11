@@ -4,9 +4,11 @@
 
 <h1>{{ $post->title }}</h1>
 
-<p class="lead article-meta">
+<p class="article-meta">
     <i class="fa fa-user"></i> by <a href="{{ route('users.show', $post->user->id) }}">{{ $post->user->username }}</a>
+
     <span style="padding:0 6px">•</span>
+
     @if ( $currentUser && ($currentUser->can("manage_contents") || $currentUser->id == $post->user_id) )
         <i class="fa fa-pencil-square-o"></i> <a href="{{ route('posts.edit', $post->id) }}">edit</a>
         <span style="padding:0 6px">•</span>
@@ -14,12 +16,12 @@
     @endif
 </p>
 
-<p class="article-meta">
-    <i class="fa fa-calendar"></i> <span class="timeago" title="{{ $post->created_at }}">{{ $post->created_at }}</span>  <span style="padding:0 6px">•</span>
+<p class="article-meta meta">
+    <i class="fa fa-calendar"></i> <span class="timeago" data-toggle="tooltip" data-placement="bottom" title="{{ $post->created_at }}">{{ $post->created_at }}</span>  <span style="padding:0 6px">•</span>
     <i class="fa fa-book"></i> <a href="{{ route('categories.show', $post->category->slug) }}">{{ $post->category->name }}</a> <span style="padding:0 6px">•</span>
     <i class="fa fa-tags"></i>
     @forelse ($post->tags as $tag)
-        <a href="{{ route('tags.show', $tag->normalized) }}"><span class="badge badge-info">{{ $tag->name }}</span></a>
+        <a href="{{ route('tags.show', $tag->normalized) }}"><span class="label label-default">{{ $tag->name }}</span></a>
     @empty
         N/A
     @endforelse
@@ -77,4 +79,13 @@
     {{ Form::close() }}
 </div>
 
+@stop
+
+@section('scripts')
+    <script>
+
+$(document).ready(function(){
+    $('.timeago').tooltip();
+});
+    </script>
 @stop

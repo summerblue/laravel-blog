@@ -140,8 +140,12 @@ h1 {
     font-size: 1.1em;
 }
 
-.article-meta {
-    color:#777;
+.article-meta, .article-meta a, .article-meta a:hover {
+    color: #ABABAB;
+    text-decoration: none;
+}
+.article-comment a{
+    color: #94B5AE;
 }
 
 .filter-header {
