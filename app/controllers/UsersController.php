@@ -1,7 +1,13 @@
 <?php
 
-class UsersController extends BaseController
+class UsersController extends \BaseController
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->beforeFilter('auth', ['only' => ['settings', 'update']]);
+    }
+
     public function create()
     {
         return View::make(Config::get('confide::signup_form'));
@@ -162,6 +168,4 @@ class UsersController extends BaseController
         Flash::success(lang('Operation succeeded.'));
         return Redirect::route('users.settings');
     }
-
-
 }

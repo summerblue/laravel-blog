@@ -2,6 +2,12 @@
 
 class CommentsController extends \BaseController
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->beforeFilter('auth');
+    }
+
 	public function store()
 	{
 		$validator = Validator::make($data = Input::all(), Comment::$rules);
