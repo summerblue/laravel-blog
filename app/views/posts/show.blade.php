@@ -9,6 +9,8 @@
     <span style="padding:0 6px">•</span>
     @if ( $currentUser && ($currentUser->can("manage_contents") || $currentUser->id == $post->user_id) )
         <a href="{{ route('posts.edit', $post->id) }}"><i class="fa fa-pencil-square-o"></i> edit</a>
+        <span style="padding:0 6px">•</span>
+        <a href="{{ route('posts.destroy', $post->id) }}" data-method="delete"><i class="fa fa-trash"></i> delete</a>
     @endif
 </p>
 

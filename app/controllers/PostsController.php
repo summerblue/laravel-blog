@@ -5,7 +5,6 @@ class PostsController extends \BaseController
     public function __construct()
     {
         parent::__construct();
-
         $this->beforeFilter('auth', ['except' => ['index', 'show']]);
     }
 
@@ -31,11 +30,10 @@ class PostsController extends \BaseController
 		}
         $data = Input::only('title', 'body', 'category_id');
         $data['user_id'] = Auth::user()->id;
-
 		$post = Post::create($data);
-
         $post->tag(Input::get('tags'));
 
+        Flash::success(lang('Operation succeeded.'));
 		return Redirect::route('posts.show', $post->id);
 	}
 
@@ -61,16 +59,15 @@ class PostsController extends \BaseController
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 		$post->update($data);
-
         $post->retag(Input::get('tags'));
 
-		return Redirect::route('posts.index');
+        Flash::success(lang('Operation succeeded.'));
+		return Redirect::route('posts.show', $post->id);
 	}
 
 	public function destroy($id)
 	{
 		Post::destroy($id);
-
 		return Redirect::route('posts.index');
 	}
 

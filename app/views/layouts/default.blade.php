@@ -14,6 +14,17 @@
     <link rel="stylesheet" href="{{ cdn("/assets/styles/bootstrap.css") }}">
     <link rel="stylesheet" href="{{ cdn("/assets/styles/main.css") }}">
 
+
+    <script>
+        Config = {
+            'cdnDomain': '{{ getCdnDomain() }}',
+            'user_id': {{ $currentUser ? $currentUser->id : 0 }},
+            'routes': {
+            },
+            'token': '{{ csrf_token() }}',
+        };
+    </script>
+
     @yield('styles')
 
   </head>
@@ -27,7 +38,10 @@
 
         @include('layouts.partials.topnav')
 
+        @include('flash::message')
+
         <div class="content">
+
             @yield('content')
         </div>
 
