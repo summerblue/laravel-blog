@@ -19,4 +19,9 @@ class User extends Eloquent implements ConfideUserInterface
     {
         return $this->hasMany('Comment');
     }
+
+    public function getDisplayNameAttribute($value)
+    {
+        return $value ?: $this->username;
+    }
 }

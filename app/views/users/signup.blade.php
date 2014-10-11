@@ -35,7 +35,7 @@
         @endif
 
         @if (Session::get('notice'))
-            <div class="alert">{{ Session::get('notice') }}</div>
+            <div class="alert alert-info">{{ Session::get('notice') }}</div>
         @endif
 
         <div class="form-actions form-group">
