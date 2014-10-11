@@ -16,6 +16,7 @@
                     <li><a href="{{ URL::to('admin') }}"><i class="fa fa-tachometer"></i> Admin Panel</a></li>
                 @endif
 
+                <li><a href="{{ route('users.settings') }}"><i class="fa fa-cog"></i> Settings</a></li>
                 <li><a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
               </ul>
             </li>

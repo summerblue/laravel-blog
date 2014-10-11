@@ -26,10 +26,13 @@ Route::get('users/reset_password/{token}', 'UsersController@resetPassword');
 Route::post('users/reset_password', 'UsersController@doResetPassword');
 Route::get('logout', ['as' => 'logout', 'uses' => 'UsersController@logout']);
 
-
 Route::resource('posts', 'PostsController');
 Route::resource('users', 'UsersController');
 
+Route::get('users/settings', [
+    'as' => 'users.settings',
+    'uses' => 'UsersController@settings'
+]);
 
 Route::get('categories/{slug}', [
     'as' => 'categories.show',
