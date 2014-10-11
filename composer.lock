@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8698b6e9808049ad8dba4b86a44b4363",
+    "hash": "db0485a18c834090880a5f2bf5766a18",
     "packages": [
         {
             "name": "ckeditor/ckeditor",
@@ -557,92 +557,6 @@
             ],
             "description": "Easy flash notifications",
             "time": "2014-08-04 21:10:40"
-        },
-        {
-            "name": "laracasts/presenter",
-            "version": "0.1.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laracasts/Presenter.git",
-                "reference": "1f3698890ccbf9ba3707a3910eda77f8a2e3f14e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laracasts/Presenter/zipball/1f3698890ccbf9ba3707a3910eda77f8a2e3f14e",
-                "reference": "1f3698890ccbf9ba3707a3910eda77f8a2e3f14e",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "~4.1",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "~0.9",
-                "phpspec/phpspec": "~2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Laracasts\\Presenter": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jeffrey Way",
-                    "email": "jeffrey@laracasts.com"
-                }
-            ],
-            "description": "Simple view presenters",
-            "keywords": [
-                "laravel",
-                "presenter",
-                "view"
-            ],
-            "time": "2014-04-01 21:35:39"
-        },
-        {
-            "name": "laracasts/validation",
-            "version": "1.2.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laracasts/Validation.git",
-                "reference": "2323c9064199039141dedf61c0f6ace33a9cc29f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laracasts/Validation/zipball/2323c9064199039141dedf61c0f6ace33a9cc29f",
-                "reference": "2323c9064199039141dedf61c0f6ace33a9cc29f",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "~4.0",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "phpspec/phpspec": "2.0.*@dev"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Laracasts\\Validation": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jeffrey Way",
-                    "email": "jeffrey@laracasts.com"
-                }
-            ],
-            "description": "Easy validation for Laravel applications.",
-            "time": "2014-07-25 20:20:38"
         },
         {
             "name": "laravel/framework",

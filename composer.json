@@ -6,8 +6,6 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"laracasts/validation": "~1.0",
-		"laracasts/presenter": "0.1.*",
 		"laracasts/flash": "~1.0",
 		"zizaco/entrust": "1.2.*@dev",
 		"zizaco/confide": "~4.0@dev",
@@ -37,10 +35,7 @@
 		],
         "files": [
             "app/helpers.php"
-        ],
-        "psr-4": {
-            "Lblog\\": "app/Lblog"
-        }
+        ]
 	},
 	"scripts": {
 		"post-install-cmd": [
