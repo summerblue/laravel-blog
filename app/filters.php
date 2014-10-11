@@ -48,6 +48,8 @@ Route::filter('auth', function()
 	}
 });
 
+// Only admin permission can enter admin panel
+Entrust::routeNeedsPermission( 'admin/*', 'manage_contents' );
 
 Route::filter('auth.basic', function()
 {
@@ -88,3 +90,4 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
