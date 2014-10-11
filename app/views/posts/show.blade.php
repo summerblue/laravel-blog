@@ -54,6 +54,8 @@
 
 @include('layouts.partials.errors')
 
+<a name="comment-input" class="anchor" href="#comment-input" > </a>
+
 <div class="comment-input">
     {{ Form::open(['route' => 'comments.store', 'method' => 'post']) }}
         <input type="hidden" name="post_id" value="{{ $post->id }}" />

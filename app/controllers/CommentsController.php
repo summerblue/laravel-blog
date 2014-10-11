@@ -13,6 +13,7 @@ class CommentsController extends \BaseController
         $data['user_id'] = Auth::user()->id;
 	   	Comment::create($data);
 
-		return Redirect::route('posts.show', Input::get('post_id'));
+        Flash::success(lang('Operation succeeded.'));
+		return Redirect::route('posts.show', [Input::get('post_id'), '#comment-input']);
 	}
 }
