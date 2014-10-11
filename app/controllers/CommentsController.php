@@ -11,10 +11,12 @@ class CommentsController extends \BaseController
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
         $data['user_id'] = Auth::user()->id;
-	   	Comment::create($data);
+	   	$comment = Comment::create($data);
+
+        $comment->post->increment('comments_count', 1);
 
         Flash::success(lang('Operation succeeded.'));
-		return Redirect::route('posts.show', [Input::get('post_id'), '#comment-input']);
+		return Redirect::route('posts.show', [$comment->post->id, '#comment-input']);
 	}
 
     public function destroy($id)
