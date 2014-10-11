@@ -1,6 +1,5 @@
 <div class="header">
 
-
     <ul class="nav nav-pills pull-right">
 
         @if ($currentUser)

@@ -10,6 +10,8 @@ class User extends Eloquent implements ConfideUserInterface
     use ConfideUser;
     use HasRole;
 
+    protected $fillable = ['display_name'];
+
     public function posts()
     {
         return $this->hasMany('Post');

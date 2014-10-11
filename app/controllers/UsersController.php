@@ -140,4 +140,28 @@ class UsersController extends BaseController
         $posts = $user->posts()->recent()->paginate(10);
         return View::make('posts.index', compact('user', 'posts'));
     }
+
+    public function settings()
+    {
+        return View::make('users.settings');
+    }
+
+    public function update()
+    {
+        $user = Auth::user();
+
+        $validator = Validator::make($data = Input::only('display_name'), ['display_name' => 'min:3']);
+
+        if ($validator->fails())
+        {
+            return Redirect::back()->withErrors($validator)->withInput();
+        }
+
+        $user->update($data);
+
+        Flash::success(lang('Operation succeeded.'));
+        return Redirect::route('users.settings');
+    }
+
+
 }
