@@ -40,10 +40,20 @@
 <div class="article-comment list-group">
     @forelse ($comments as $comment)
         <div class="list-group-item">
-            <h5 class="list-group-item-heading"><a href="{{ route('users.show', $comment->user->id) }}">{{ $comment->user->display_name }}</a></h5>
-            <div class="comment_body">
-                {{ $comment->body }}
+            <div class="pull-left">
+                <h5 class="list-group-item-heading"><a href="{{ route('users.show', $comment->user->id) }}">{{ $comment->user->display_name }}</a></h5>
+                <div class="comment_body">
+                    {{ $comment->body }}
+                </div>
             </div>
+
+            @if ( $currentUser && ($currentUser->can("manage_contents") || $currentUser->id == $comment->user_id) )
+                <div class="pull-right meta">
+                    <a href="{{ route('comments.destroy', $comment->id) }}" data-method="delete"><i class="fa fa-trash"></i> </a>
+                </div>
+            @endif
+            <div class="clearfix"></div>
+
         </div>
     @empty
         <div class="list-group-item" style="border:none;">

@@ -49,6 +49,11 @@ Route::post('comments', [
     'uses' => 'CommentsController@store'
 ]);
 
+Route::delete('comments/{id}', [
+    'as' => 'comments.destroy',
+    'uses' => 'CommentsController@destroy'
+]);
+
 Route::post('upload_image', [
     'as' => 'posts.upload_image',
     'uses' => 'PostsController@uploadImage'
