@@ -2,8 +2,8 @@
 
 return [
 
-    'title' => '用户',
-    'single' => '用户',
+    'title' => 'User',
+    'single' => 'User',
     'model' => 'User',
 
     'columns' => [
@@ -11,48 +11,48 @@ return [
             'title' => 'ID'
         ],
         'username' => [
-            'title' => '用户名',
+            'title' => 'User Name',
         ],
         'display_name' => [
-            'title' => '显示名字',
+            'title' => 'Display Name',
         ],
         'email' => [
-            'title' => '邮箱',
+            'title' => 'Email',
         ],
         'created_at',
     ],
 
     'edit_fields' => [
         'username' => [
-            'title' => '用户名',
+            'title' => 'User Name',
             'type' => 'text'
         ],
         'display_name' => [
-            'title' => '显示名称',
+            'title' => 'Display Name',
             'type' => 'text'
         ],
         'email' => [
-            'title' => '邮箱',
+            'title' => 'Email',
             'type' => 'text'
         ],
         'password' => [
-            'title' => '密码',
+            'title' => 'Password',
             'type' => 'password'
         ],
     ],
 
     'filters' => [
         'id' => [
-            'title' => '用户ID',
+            'title' => 'User ID',
         ],
         'username' => [
-            'title' => '用户名',
+            'title' => 'User Name',
         ],
         'display_name' => [
-            'title' => '用户名',
+            'title' => 'Display Name',
         ],
         'email' => [
-            'title' => '邮箱',
+            'title' => 'Email',
         ],
     ],
 ];

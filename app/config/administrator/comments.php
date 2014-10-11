@@ -2,8 +2,8 @@
 
 return [
 
-    'title' => '评论',
-    'single' => '评论',
+    'title' => 'Comment',
+    'single' => 'Comment',
     'model' => 'Comment',
 
     'action_permissions'=> [
@@ -22,16 +22,16 @@ return [
             'title' => 'ID'
         ],
         'body' => [
-            'title' => '内容',
+            'title' => 'Body',
             'sortable' => false,
         ],
         'user_name' => [
-            'title' => "发布者",
+            'title' => "Author",
             'relationship' => 'user', //this is the name of the Eloquent relationship method!
             'select' => "(:table).username",
         ],
         'post_title' => [
-            'title' => "文章标题",
+            'title' => "Post Title",
             'relationship' => 'post',
             'select' => "(:table).title",
         ],
@@ -39,14 +39,14 @@ return [
 
     'edit_fields' => [
         'body' => [
-            'title' => '内容',
+            'title' => 'Body',
             'type' => 'text'
         ],
     ],
 
     'filters' => [
         'body' => [
-            'title' => '内容',
+            'title' => 'Body',
         ]
     ],
 

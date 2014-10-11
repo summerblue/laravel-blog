@@ -2,8 +2,8 @@
 
 return [
 
-    'title' => '标签',
-    'single' => '标签',
+    'title' => 'Tag',
+    'single' => 'Tag',
     'model' => 'Tag',
 
     'columns' => [
@@ -11,10 +11,10 @@ return [
             'title' => 'ID'
         ],
         'name' => [
-            'title' => '名称',
+            'title' => 'Name',
         ],
         'slug' => [
-            'title' => '别名 (用于 URI 中)',
+            'title' => 'Slug (use for URI)',
             'sortable' => false,
         ],
         'created_at',
@@ -22,18 +22,18 @@ return [
 
     'edit_fields' => [
         'name' => [
-            'title' => '名称',
+            'title' => 'Name',
             'type' => 'text'
         ],
         'slug' => [
-            'title' => '别名 (用于 URI 中)',
+            'title' => 'Slug (use for URI)',
             'type' => 'text'
         ]
     ],
 
     'filters' => [
         'name' => [
-            'title' => '名称',
+            'title' => 'Name',
         ]
     ]
 ];

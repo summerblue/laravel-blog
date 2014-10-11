@@ -3826,7 +3826,7 @@
 
     ImageButton.prototype.icon = 'picture-o';
 
-    ImageButton.prototype.title = '插入图片';
+    ImageButton.prototype.title = 'Insert Image';
 
     ImageButton.prototype.htmlTag = 'img';
 
@@ -4180,7 +4180,7 @@
   ImagePopover = (function(_super) {
     __extends(ImagePopover, _super);
 
-    ImagePopover.prototype._tpl = "<div class=\"link-settings\">\n  <div class=\"settings-field\">\n    <label>图片地址</label>\n    <input class=\"image-src\" type=\"text\"/>\n    <a class=\"btn-upload\" href=\"javascript:;\" title=\"上传图片\" tabindex=\"-1\">\n      <span class=\"fa fa-upload\"></span>\n    </a>\n  </div>\n</div>";
+    ImagePopover.prototype._tpl = "<div class=\"link-settings\">\n  <div class=\"settings-field\">\n    <label>Image Link</label>\n    <input class=\"image-src\" type=\"text\"/>\n    <a class=\"btn-upload\" href=\"javascript:;\" title=\"Upload Image\" tabindex=\"-1\">\n      <span class=\"fa fa-upload\"></span>\n    </a>\n  </div>\n</div>";
 
     ImagePopover.prototype.offset = {
       top: 6,
@@ -4238,7 +4238,7 @@
         if (_this.input) {
           _this.input.remove();
         }
-        return _this.input = $('<input type="file" title="上传图片" accept="image/*">').appendTo($uploadBtn);
+        return _this.input = $('<input type="file" title="Upload Image" accept="image/*">').appendTo($uploadBtn);
       };
       createInput();
       this.el.on('click mousedown', 'input[type=file]', function(e) {
@@ -4259,7 +4259,7 @@
       ImagePopover.__super__.show.apply(this, args);
       $img = this.target;
       if ($img.hasClass('uploading')) {
-        return this.srcEl.val('正在上传');
+        return this.srcEl.val('Uploading');
       } else {
         return this.srcEl.val($img.attr('src'));
       }

@@ -2,8 +2,8 @@
 
 return [
 
-    'title' => '文章',
-    'single' => '文章',
+    'title' => 'Post',
+    'single' => 'Post',
     'model' => 'Post',
 
     'columns' => [
@@ -11,10 +11,10 @@ return [
             'title' => 'ID'
         ],
         'title' => [
-            'title' => '标题',
+            'title' => 'Title',
         ],
         'body' => [
-            'title' => '内容',
+            'title' => 'Content',
             'sortable' => false,
             'output' => function($value)
             {
@@ -23,36 +23,36 @@ return [
             },
         ],
         'user_name' => [
-            'title' => "发布者",
+            'title' => "Author",
             'relationship' => 'user', //this is the name of the Eloquent relationship method!
             'select' => "(:table).username",
         ],
         'category_name' => [
-            'title' => "分类名称",
+            'title' => "Category",
             'relationship' => 'category', //this is the name of the Eloquent relationship method!
             'select' => "(:table).name",
         ],
         'comments_count' => [
-            'title' => '回复数'
+            'title' => 'Comments Count'
         ],
         'created_at',
     ],
 
     'edit_fields' => [
         'title' => [
-            'title' => '标题',
+            'title' => 'Title',
             'type' => 'text'
         ],
         'category' => array(
             'type' => 'relationship',
-            'title' => '分类',
+            'title' => 'Category',
             'name_field' => 'name',
         )
     ],
 
     'filters' => [
         'title' => [
-            'title' => '标题',
+            'title' => 'Title',
         ]
     ],
 
