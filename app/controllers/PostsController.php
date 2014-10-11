@@ -30,6 +30,8 @@ class PostsController extends \BaseController
 		}
         $data = Input::only('title', 'body', 'category_id');
         $data['user_id'] = Auth::user()->id;
+        $data['body'] = Purifier::clean($data['body'], 'ugc_body');
+
 		$post = Post::create($data);
         $post->tag(Input::get('tags'));
 
@@ -59,6 +61,9 @@ class PostsController extends \BaseController
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
+
+        $data['body'] = Purifier::clean($data['body'], 'ugc_body');
+
 		$post->update($data);
         $post->retag(Input::get('tags'));
 

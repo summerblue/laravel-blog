@@ -2,10 +2,10 @@
 
 @section('content')
 
-<h1>{{ $post->title }}</h1>
+<h1>{{{ $post->title }}}</h1>
 
 <p class="article-meta">
-    <i class="fa fa-user"></i> by <a href="{{ route('users.show', $post->user->id) }}">{{ $post->user->username }}</a>
+    <i class="fa fa-user"></i> by <a href="{{ route('users.show', $post->user->id) }}">{{{ $post->user->display_name }}}</a>
 
     @if ( $currentUser && ($currentUser->can("manage_contents") || $currentUser->id == $post->user_id) )
         <span style="padding:0 6px">•</span>
@@ -20,7 +20,7 @@
     <i class="fa fa-book"></i> <a href="{{ route('categories.show', $post->category->slug) }}">{{ $post->category->name }}</a> <span style="padding:0 6px">•</span>
     <i class="fa fa-tags"></i>
     @forelse ($post->tags as $tag)
-        <a href="{{ route('tags.show', $tag->normalized) }}"><span class="label label-default">{{ $tag->name }}</span></a>
+        <a href="{{ route('tags.show', $tag->normalized) }}"><span class="label label-default">{{{ $tag->name }}}</span></a>
     @empty
         N/A
     @endforelse
@@ -41,9 +41,9 @@
     @forelse ($comments as $comment)
         <div class="list-group-item">
             <div class="pull-left">
-                <h5 class="list-group-item-heading"><a href="{{ route('users.show', $comment->user->id) }}">{{ $comment->user->display_name }}</a></h5>
+                <h5 class="list-group-item-heading"><a href="{{ route('users.show', $comment->user->id) }}">{{{ $comment->user->display_name }}}</a></h5>
                 <div class="comment_body">
-                    {{ $comment->body }}
+                    {{{ $comment->body }}}
                 </div>
             </div>
 

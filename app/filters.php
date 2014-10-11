@@ -13,13 +13,13 @@
 
 App::before(function($request)
 {
-	//
+    Input::merge(array_strip_xss(Input::all()));
 });
 
 
 App::after(function($request, $response)
 {
-	//
+
 });
 
 /*
