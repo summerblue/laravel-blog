@@ -35,3 +35,8 @@ Route::get('categories/{slug}', [
     'as' => 'categories.show',
     'uses' => 'CategoriesController@show'
 ]);
+
+Route::get('tags/{slug}', [
+    'as' => 'tags.show',
+    'uses' => 'TagsController@show'
+]);

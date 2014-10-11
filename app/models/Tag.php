@@ -2,11 +2,18 @@
 
 class Tag extends \Eloquent
 {
-	protected $fillable = ['name', 'slug'];
+    protected $table = 'taggable_tags';
+
+	protected $fillable = ['name', 'normalized'];
+
+    public function taggable()
+    {
+        return $this->morphTo();
+    }
 
     public function posts()
     {
-        return $this->hasMany('Post');
+        return $this->morphedByMany('Post', 'taggable', 'taggable_taggables')->recent()->paginate(10);
     }
 
     public function scopeRecent($query)

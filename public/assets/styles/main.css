@@ -111,6 +111,11 @@ body {
   margin: 11px 0px 0px;
 }
 
+.meta .label-default {
+    background-color: #eee;
+    color: #888;
+}
+
 .list-group-item {
   margin-bottom: 0px;
   border:none;
@@ -139,4 +144,10 @@ h1 {
 
 .article-meta {
     color:#777;
+}
+
+.filter-header {
+    margin-left: 10px;
+    line-height: 1.5;
+    margin-bottom: 20px;
 }
