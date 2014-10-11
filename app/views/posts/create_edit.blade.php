@@ -23,7 +23,7 @@
     </div>
 
     <div class="form-group">
-      {{ Form::text('tags', null, ['class' => 'form-control', 'placeholder' => lang('Fill in the tags 5)'), 'style' => "width: 100%; height: 45px;"]) }}
+      {{ Form::text('tags', isset($post) ? $post->tagList : null, ['class' => 'form-control', 'placeholder' => lang('Fill in the tags 5)'), 'style' => "width: 100%; height: 45px;"]) }}
     </div>
 
     <div class="form-group">
