@@ -69,6 +69,7 @@ class PostsController extends \BaseController
 	public function destroy($id)
 	{
 		Post::destroy($id);
+        Flash::success(lang('Operation succeeded.'));
 		return Redirect::route('posts.index');
 	}
 
