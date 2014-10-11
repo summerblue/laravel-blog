@@ -53,13 +53,16 @@
                 </div>
             @endif
             <div class="clearfix"></div>
-
         </div>
     @empty
         <div class="list-group-item" style="border:none;">
             There are nothing here!
         </div>
     @endforelse
+
+    <div class="comments-pager">
+        {{ $comments->links() }}
+    </div>
 </div>
 
 @include('layouts.partials.errors')

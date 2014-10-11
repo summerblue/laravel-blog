@@ -179,3 +179,7 @@ h1 {
 .comment-input {
     /*margin-top: 10px;*/
 }
+.comments-pager {
+    margin-bottom: -25px;
+    margin-left: 20px;
+}
