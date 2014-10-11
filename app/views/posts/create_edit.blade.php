@@ -36,7 +36,11 @@
     </div>
 
     <div class="form-group status-post-submit">
-      {{ Form::submit(lang('Publish'), ['class' => 'btn btn-primary', 'id' => 'topic-create-submit']) }}
+        {{ Form::submit(lang('Publish'), ['class' => 'btn btn-primary', 'id' => 'topic-create-submit']) }}
+
+        @if (isset($post))
+            <a class="btn btn-default" href="{{ route('posts.show', $post->id) }}" target="_blank">view original article</a>
+        @endif
     </div>
 
     {{ Form::close() }}
