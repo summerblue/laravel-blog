@@ -72,4 +72,27 @@ class PostsController extends \BaseController
 		return Redirect::route('posts.index');
 	}
 
+    public function uploadImage()
+    {
+        $data = [
+            'success' => false,
+            'msg' => 'Failed!',
+            'file_path' => ''
+        ];
+
+        if ($file = Input::file('upload_file'))
+        {
+            $fileName        = $file->getClientOriginalName();
+            $extension       = $file->getClientOriginalExtension() ?: 'png';
+            $folderName      = '/uploads/images/' . date("Ym", time()) .'/'.date("d", time()) .'/'. Auth::user()->id;
+            $destinationPath = public_path() . $folderName;
+            $safeName        = str_random(10).'.'.$extension;
+            $file->move($destinationPath, $safeName);
+            $data['file_path'] = route('home') . $folderName .'/'. $safeName;
+            $data['msg'] = "Succeeded!";
+            $data['success'] = true;
+        }
+        return $data;
+    }
+
 }

@@ -48,3 +48,8 @@ Route::post('comments', [
     'as' => 'comments.store',
     'uses' => 'CommentsController@store'
 ]);
+
+Route::post('upload_image', [
+    'as' => 'posts.upload_image',
+    'uses' => 'PostsController@uploadImage'
+]);

@@ -56,7 +56,7 @@
         var editor = new Simditor({
             textarea: $('#editor'),
             upload: {
-                url: 'file_upload',
+                url: '{{ route('posts.upload_image') }}',
                 params: null,
                 fileKey: 'upload_file',
                 connectionCount: 3,
