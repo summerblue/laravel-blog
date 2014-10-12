@@ -105,4 +105,28 @@ class PostsController extends \BaseController
         return $data;
     }
 
+    public function feed()
+    {
+        $posts = Post::recent()->limit(20)->get();
+
+        $channel =[
+            'title' => 'Laravel Blog',
+            'description' => 'Happy Bloging',
+            'link' => URL::route('feed')
+        ];
+
+        $feed = Rss::feed('2.0', 'UTF-8');
+        $feed->channel($channel);
+
+        foreach ($posts as $post)
+        {
+            $feed->item([
+                'title' => $post->title,
+                'description|cdata' => str_limit($post->body, 200),
+                'link' => URL::route('posts.show', $post->id),
+                ]);
+        }
+
+        return Response::make($feed, 200, array('Content-Type' => 'text/xml'));
+    }
 }

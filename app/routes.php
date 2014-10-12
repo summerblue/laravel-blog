@@ -56,6 +56,10 @@ Route::post('upload_image', [
     'uses' => 'PostsController@uploadImage'
 ]);
 
+Route::get('feed', [
+    'as' => 'feed',
+    'uses' => 'PostsController@feed'
+]);
 
 Route::resource('posts', 'PostsController');
 Route::resource('users', 'UsersController');
