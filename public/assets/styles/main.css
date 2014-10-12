@@ -10,6 +10,7 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: #DBE4DF;
+  line-height: 1.8;
   background-image: url(../images/bg.jpg);
   color:#777;
   font-family: "lato-regular", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
@@ -183,3 +184,89 @@ h1 {
     margin-bottom: -50px;
     margin-left: 20px;
 }
+
+/*----------------------- nprogress -----------------------*/
+/* Make clicks pass-through */
+#nprogress {
+  pointer-events: none; }
+
+#nprogress .bar {
+  background: #55D8BE;
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; }
+
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #55D8BE, 0 0 5px #55D8BE;
+  opacity: 1;
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px); }
+
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031;
+  top: 15px;
+  right: 15px; }
+
+#nprogress .spinner-icon {
+  width: 18px;
+  height: 18px;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  border: solid 2px transparent;
+  border-top-color: #55D8BE;
+  border-left-color: #55D8BE;
+  border-radius: 50%;
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+  animation: nprogress-spinner 400ms linear infinite; }
+
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative; }
+
+.nprogress-custom-parent #nprogress .spinner, .nprogress-custom-parent #nprogress .bar {
+  position: absolute; }
+
+@-webkit-keyframes nprogress-spinner {
+  0% {
+    -webkit-transform: rotate(0deg); }
+
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes nprogress-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+/*----------------------- nprogress End -----------------------*/
+
+/*----------------------- scrollUp -----------------------*/
+
+/* Image style */
+#scrollUp {
+  background-image: url("../images/top.png");
+  bottom: 20px;
+  right: 20px;
+  width: 38px;
+  /* Width of image */
+  height: 38px;
+  /* Height of image */
+  text-indent: -999999px; }
+/*----------------------- scrollUp End -----------------------*/

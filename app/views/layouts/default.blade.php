@@ -59,6 +59,9 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.js"></script>
 
+    <script src="{{ cdn("/assets/scripts/jquery.pjax.js") }}"></script>
+    <script src="{{ cdn("/assets/scripts/jquery.scrollUp.js") }}"></script>
+    <script src="{{ cdn("/assets/scripts/nprogress.js") }}"></script>
     <script src="{{ cdn("/assets/scripts/main.js") }}"></script>
 
     @yield('scripts')

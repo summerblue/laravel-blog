@@ -5,6 +5,18 @@
         init: function(){
             var self = this;
 
+            $(document).pjax('a:not(a[target="_blank"])', 'body');
+            $(document).on('pjax:start', function() {
+                NProgress.start();
+            });
+            $(document).on('pjax:end', function() {
+                NProgress.done();
+            });
+            $(document).on('pjax:complete', function() {
+                NProgress.done();
+                self.siteBootUp();
+            });
+
             self.siteBootUp();
         },
 
@@ -17,6 +29,7 @@
             self.initExternalLink();
             self.initTimeAgo();
             self.initDeleteForm();
+            self.initScrollToTop();
         },
 
         /**
@@ -74,6 +87,13 @@
                     }
                 });
            // attr('onclick',' if (confirm("Are you sure want to proceed?")) { $(this).find("form").submit(); };');
+        },
+
+        /**
+         * Scroll to top in one click.
+         */
+        initScrollToTop: function(){
+            $.scrollUp.init();
         },
 
     }
