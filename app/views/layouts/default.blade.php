@@ -47,7 +47,9 @@
         <div class="footer">
             <p>
                 <span class="glyphicon glyphicon-heart"></span> from The EST Group
-                <span class="pull-right"><a href="{{ route('about') }}">about</a></span>
+                <span class="pull-right">
+                    <i class="fa fa-github" style="font-size:15px"></i> <a href="https://github.com/summerblue/laravel-blog" target="_blank">Project at Github</a>.
+                </span>
             </p>
         </div>
 
