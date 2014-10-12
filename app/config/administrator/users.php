@@ -2,8 +2,8 @@
 
 return [
 
-    'title' => 'User',
-    'single' => 'User',
+    'title' => lang('User'),
+    'single' => lang('User'),
     'model' => 'User',
 
     'columns' => [
@@ -11,48 +11,48 @@ return [
             'title' => 'ID'
         ],
         'username' => [
-            'title' => 'User Name',
+            'title' => lang('User Name'),
         ],
         'display_name' => [
-            'title' => 'Display Name',
+            'title' => lang('Display Name'),
         ],
         'email' => [
-            'title' => 'Email',
+            'title' => lang('Email'),
         ],
         'created_at',
     ],
 
     'edit_fields' => [
         'username' => [
-            'title' => 'User Name',
+            'title' => lang('User Name'),
             'type' => 'text'
         ],
         'display_name' => [
-            'title' => 'Display Name',
+            'title' => lang('Display Name'),
             'type' => 'text'
         ],
         'email' => [
-            'title' => 'Email',
+            'title' => lang('Email'),
             'type' => 'text'
         ],
         'password' => [
-            'title' => 'Password',
+            'title' => lang('Password'),
             'type' => 'password'
         ],
     ],
 
     'filters' => [
         'id' => [
-            'title' => 'User ID',
+            'title' => lang('User ID'),
         ],
         'username' => [
-            'title' => 'User Name',
+            'title' => lang('User Name'),
         ],
         'display_name' => [
-            'title' => 'Display Name',
+            'title' => lang('Display Name'),
         ],
         'email' => [
-            'title' => 'Email',
+            'title' => lang('Email'),
         ],
     ],
 ];

@@ -2,9 +2,9 @@
 
 @section('title')
     @if (isset($post))
-        Edit Post - @parent
+        {{ lang('Edit Post') }} - @parent
     @else
-        Create Post - @parent
+        {{ lang('Create Post') }} - @parent
     @endif
 @stop
 
@@ -27,11 +27,11 @@
     </div>
 
     <div class="form-group">
-      {{ Form::select('category_id', $category_selects , Input::old('category_id'), ['class' => 'form-control', 'placeholder' => lang('Title goes here')]) }}
+      {{ Form::select('category_id', $category_selects , Input::old('category_id'), ['class' => 'form-control']) }}
     </div>
 
     <div class="form-group">
-      {{ Form::text('tags', isset($post) ? $post->tagList : null, ['class' => 'form-control', 'placeholder' => lang('Fill in the tags 5)'), 'style' => "width: 100%; height: 45px;"]) }}
+      {{ Form::text('tags', isset($post) ? $post->tagList : null, ['class' => 'form-control', 'style' => "width: 100%; height: 45px;"]) }}
     </div>
 
     <div class="form-group">
@@ -40,14 +40,14 @@
                                         'style' => "overflow:hidden",
                                         'id' => 'editor',
                                         'autofocus' => 'autofocus',
-                                        'placeholder' => 'Please Enter some text...']) }}
+                                        'placeholder' => lang('Please Enter some text...')]) }}
     </div>
 
     <div class="form-group status-post-submit">
         {{ Form::submit(lang('Publish'), ['class' => 'btn btn-primary', 'id' => 'topic-create-submit']) }}
 
         @if (isset($post))
-            <a class="btn btn-default" href="{{ route('posts.show', $post->id) }}" target="_blank">view original article</a>
+            <a class="btn btn-default" href="{{ route('posts.show', $post->id) }}" target="_blank">{{ lang('view original article') }}</a>
         @endif
     </div>
 

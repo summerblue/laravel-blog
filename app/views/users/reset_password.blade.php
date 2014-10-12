@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-Reset Password - @parent
+{{ lang('Reset Password') }} - @parent
 @stop
 
 @section('content')
@@ -11,12 +11,12 @@ Reset Password - @parent
         <input type="hidden" name="_token" value="{{{ Session::getToken() }}}">
 
         <div class="form-group">
-            <label for="password">{{{ Lang::get('confide::confide.password') }}}</label>
-            <input class="form-control" placeholder="{{{ Lang::get('confide::confide.password') }}}" type="password" name="password" id="password">
+            <label for="password">{{{ lang('Password') }}}</label>
+            <input class="form-control" placeholder="{{{ lang('Password') }}}" type="password" name="password" id="password">
         </div>
         <div class="form-group">
-            <label for="password_confirmation">{{{ Lang::get('confide::confide.password_confirmation') }}}</label>
-            <input class="form-control" placeholder="{{{ Lang::get('confide::confide.password_confirmation') }}}" type="password" name="password_confirmation" id="password_confirmation">
+            <label for="password_confirmation">{{{ lang('Password Confirmation') }}}</label>
+            <input class="form-control" placeholder="{{{ lang('Password Confirmation') }}}" type="password" name="password_confirmation" id="password_confirmation">
         </div>
 
         @if (Session::get('error'))
@@ -28,7 +28,7 @@ Reset Password - @parent
         @endif
 
         <div class="form-actions form-group">
-            <button type="submit" class="btn btn-primary">{{{ Lang::get('confide::confide.forgot.submit') }}}</button>
+            <button type="submit" class="btn btn-primary">{{{ lang('Submit') }}}</button>
         </div>
     </form>
 </div>

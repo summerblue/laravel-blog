@@ -2,8 +2,8 @@
 
 return [
 
-    'title' => 'Tag',
-    'single' => 'Tag',
+    'title' => lang('Tag'),
+    'single' => lang('Tag'),
     'model' => 'Tag',
 
     'columns' => [
@@ -11,10 +11,10 @@ return [
             'title' => 'ID'
         ],
         'name' => [
-            'title' => 'Name',
+            'title' => lang('Name'),
         ],
         'slug' => [
-            'title' => 'Slug (use for URI)',
+            'title' => lang('Slug (use for URI)'),
             'sortable' => false,
         ],
         'created_at',
@@ -22,18 +22,18 @@ return [
 
     'edit_fields' => [
         'name' => [
-            'title' => 'Name',
+            'title' => lang('Name'),
             'type' => 'text'
         ],
         'slug' => [
-            'title' => 'Slug (use for URI)',
+            'title' => lang('Slug (use for URI)'),
             'type' => 'text'
         ]
     ],
 
     'filters' => [
         'name' => [
-            'title' => 'Name',
+            'title' => lang('Name'),
         ]
     ]
 ];

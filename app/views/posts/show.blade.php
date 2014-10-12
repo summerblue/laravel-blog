@@ -17,13 +17,13 @@
 <h1>{{{ $post->title }}}</h1>
 
 <p class="article-meta">
-    <i class="fa fa-user"></i> by <a href="{{ route('users.show', $post->user->id) }}">{{{ $post->user->display_name }}}</a>
+    <i class="fa fa-user"></i> {{ lang('by') }} <a href="{{ route('users.show', $post->user->id) }}">{{{ $post->user->display_name }}}</a>
 
     @if ( $currentUser && ($currentUser->can("manage_contents") || $currentUser->id == $post->user_id) )
         <span style="padding:0 6px">•</span>
-        <i class="fa fa-pencil-square-o"></i> <a href="{{ route('posts.edit', $post->id) }}">edit</a>
+        <i class="fa fa-pencil-square-o"></i> <a href="{{ route('posts.edit', $post->id) }}">{{ lang('edit') }}</a>
         <span style="padding:0 6px">•</span>
-        <i class="fa fa-trash"></i> <a href="{{ route('posts.destroy', $post->id) }}" data-method="delete">delete</a>
+        <i class="fa fa-trash"></i> <a href="{{ route('posts.destroy', $post->id) }}" data-method="delete">{{ lang('delete') }}</a>
     @endif
 </p>
 
@@ -46,7 +46,7 @@
 
 <h4 style="margin-top:50px; margin-bottom:10px;">
     <hr>
-    Comments ( {{ $comments->getTotal() }} ):
+    {{ lang('Comments') }} ( {{ $comments->getTotal() }} ):
 </h4>
 
 <div class="article-comment list-group">
@@ -68,7 +68,7 @@
         </div>
     @empty
         <div class="list-group-item" style="border:none;">
-            There are nothing here!
+            {{ lang('There are nothing here!') }}
         </div>
     @endforelse
 

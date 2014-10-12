@@ -25,7 +25,7 @@ function make_excerpt($value)
 
 function lang($text)
 {
-    return str_replace('phphub.', '', trans('phphub.'.$text));
+    return str_replace('blog.', '', trans('blog.'.$text));
 }
 
 function array_strip_xss($array)

@@ -1,26 +1,26 @@
 @extends('layouts.default')
 
 @section('title')
-Register - @parent
+{{ lang('Register') }} - @parent
 @stop
 
 @section('content')
 <div class="col-md-6 col-md-offset-3">
-    <h3 class="text-muted">Create new account</h3>
+    <h3 class="text-muted">{{ lang('Create new account') }}</h3>
     <form method="POST" action="{{{ URL::to('users') }}}" accept-charset="UTF-8">
         <input type="hidden" name="_token" value="{{{ Session::getToken() }}}">
 
         <div class="form-group">
-            <input class="form-control" placeholder="{{{ Lang::get('confide::confide.username') }}}" type="text" name="username" id="username" value="{{{ Input::old('username') }}}">
+            <input class="form-control" placeholder="{{{ lang('Username') }}}" type="text" name="username" id="username" value="{{{ Input::old('username') }}}">
         </div>
         <div class="form-group">
-            <input class="form-control" placeholder="{{{ Lang::get('confide::confide.e_mail') }}}" type="text" name="email" id="email" value="{{{ Input::old('email') }}}">
+            <input class="form-control" placeholder="{{{ lang('Email') }}}" type="text" name="email" id="email" value="{{{ Input::old('email') }}}">
         </div>
         <div class="form-group">
-            <input class="form-control" placeholder="{{{ Lang::get('confide::confide.password') }}}" type="password" name="password" id="password">
+            <input class="form-control" placeholder="{{{ lang('Password') }}}" type="password" name="password" id="password">
         </div>
         <div class="form-group">
-            <input class="form-control" placeholder="{{{ Lang::get('confide::confide.password_confirmation') }}}" type="password" name="password_confirmation" id="password_confirmation">
+            <input class="form-control" placeholder="{{{ lang('Password Confirmation') }}}" type="password" name="password_confirmation" id="password_confirmation">
         </div>
 
         @if (Session::get('error'))
@@ -36,7 +36,7 @@ Register - @parent
         @endif
 
         <div class="form-actions form-group">
-          <button type="submit" class="btn btn-primary">{{{ Lang::get('confide::confide.signup.submit') }}}</button>
+          <button type="submit" class="btn btn-primary">{{{ lang('Submit') }}}</button>
         </div>
     </form>
 </div>

@@ -2,8 +2,8 @@
 
 return [
 
-    'title' => 'Comment',
-    'single' => 'Comment',
+    'title' => lang('Comment'),
+    'single' => lang('Comment'),
     'model' => 'Comment',
 
     'action_permissions'=> [
@@ -22,16 +22,16 @@ return [
             'title' => 'ID'
         ],
         'body' => [
-            'title' => 'Body',
+            'title' => lang('Body',)
             'sortable' => false,
         ],
         'user_name' => [
-            'title' => "Author",
+            'title' => lang("Author"),
             'relationship' => 'user', //this is the name of the Eloquent relationship method!
             'select' => "(:table).username",
         ],
         'post_title' => [
-            'title' => "Post Title",
+            'title' => lang("Post Title"),
             'relationship' => 'post',
             'select' => "(:table).title",
         ],
@@ -39,14 +39,14 @@ return [
 
     'edit_fields' => [
         'body' => [
-            'title' => 'Body',
+            'title' => lang('Body'),
             'type' => 'text'
         ],
     ],
 
     'filters' => [
         'body' => [
-            'title' => 'Body',
+            'title' => lang('Body'),
         ]
     ],
 
