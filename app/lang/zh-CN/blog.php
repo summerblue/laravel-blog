@@ -61,6 +61,4 @@ return array(
     'User' => '用户',
     'User Name' => '用户名',
     'Display Name' => '显示名字',
-    '' => '',
-    '' => '',
 );
