@@ -22,7 +22,7 @@ return [
             'title' => 'ID'
         ],
         'body' => [
-            'title' => lang('Body',)
+            'title' => lang('Body'),
             'sortable' => false,
         ],
         'user_name' => [
