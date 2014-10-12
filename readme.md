@@ -22,14 +22,14 @@ Laravel-Blog is a blog project written in Laravel 4.2.
 
 ## Packages
 
-* [laracasts/flash]() for easy notify user action;
+* [laracasts/flash](https://github.com/laracasts/flash) for easy notify user action;
 * [zizaco/entrust](https://github.com/Zizaco/entrust) for user Role-based Permissions;
 * [zizaco/confide](https://github.com/Zizaco/confide) for user authentication;
-* [thujohn/rss]() for generate rss feed;
-* [mews/purifier]() for XSS filtering;
-* [frozennode/administrator]() for quick simple admin interface;
-* [cviebrock/eloquent-sluggable]() for generate slug;
-* [cviebrock/eloquent-taggable]() for post tag relationship;
+* [thujohn/rss](https://github.com/thujohn/rss-l4) for generate rss feed;
+* [mews/purifier](https://github.com/mewebstudio/Purifier) for XSS filtering;
+* [frozennode/administrator](https://github.com/FrozenNode/Laravel-Administrator) for quick simple admin interface;
+* [cviebrock/eloquent-sluggable](https://github.com/cviebrock/eloquent-sluggable) for generate slug;
+* [cviebrock/eloquent-taggable](https://github.com/cviebrock/eloquent-taggable) for post tag relationship;
 
 ## Todos
 
