@@ -17,6 +17,12 @@ function getCdnDomain()
     return Config::get('app.url_static') ?: Config::get('app.url');
 }
 
+function make_excerpt($value)
+{
+    $excerpt = trim(preg_replace('/\s\s+/', ' ', strip_tags($value)));
+    return str_limit($excerpt, 200);
+}
+
 function lang($text)
 {
     return str_replace('phphub.', '', trans('phphub.'.$text));

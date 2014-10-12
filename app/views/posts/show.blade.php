@@ -1,5 +1,17 @@
 @extends('layouts.default')
 
+@section('title')
+{{{ $post->title }}} - @parent
+@stop
+
+@section('description')
+{{{ make_excerpt($post->body) }}} - @parent
+@stop
+
+@section('keywords')
+{{ $post->tagList }},@parent
+@stop
+
 @section('content')
 
 <h1>{{{ $post->title }}}</h1>

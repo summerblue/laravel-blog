@@ -3,8 +3,10 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Laravel Blog</title>
-    <meta name="description" content="">
+    <title>@section('title')Laravel Blog @show</title>
+    <meta name="keywords" content="@section('keywords') Laravel,Blog @show" />
+    <meta name="description" content="@section('description') Laravel-Blog is a blog application written in Laravel 4.2. @show">
+
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
 

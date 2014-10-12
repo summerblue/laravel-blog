@@ -1,5 +1,17 @@
 @extends('layouts.default')
 
+@section('title')
+    @if (isset($category))
+        Category: {{ $category->name }} - @parent
+    @elseif (isset($tag))
+        Tag: {{ $tag->name }} - @parent
+    @elseif (isset($user))
+        User: {{ $user->display_name }} - @parent
+    @else
+        All Posts - @parent
+    @endif
+@stop
+
 @section('content')
 
     @if (isset($category))

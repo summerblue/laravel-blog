@@ -1,5 +1,13 @@
 @extends('layouts.default')
 
+@section('title')
+    @if (isset($post))
+        Edit Post - @parent
+    @else
+        Create Post - @parent
+    @endif
+@stop
+
 @section('styles')
     <link rel="stylesheet" type="text/css" href="{{ cdn('/assets/editor/simditor.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ cdn('/assets/editor/jquery.tagsinput.min.css') }}" />

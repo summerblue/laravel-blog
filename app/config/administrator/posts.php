@@ -18,8 +18,7 @@ return [
             'sortable' => false,
             'output' => function($value)
             {
-                $excerpt = trim(preg_replace('/\s\s+/', ' ', strip_tags($value)));
-                return str_limit($excerpt, 200);
+                return make_excerpt($value);
             },
         ],
         'user_name' => [
