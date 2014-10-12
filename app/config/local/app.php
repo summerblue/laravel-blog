@@ -4,7 +4,7 @@ return array(
 
 	'debug' => true,
 
-    'timezone' => 'Asia/Shanghai',
+    // 'timezone' => 'Asia/Shanghai',
+    // 'locale' => 'zh-CN',
 
-    'locale' => 'zh-CN',
 );
